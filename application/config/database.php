@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'lebnhorg_hours';
-$db['default']['password'] = '3ckxx64exyjq';
-$db['default']['database'] = 'lebnhorg_hours';
+$db['default']['username'] = 'lebnhorg_demo';
+$db['default']['password'] = 'n}f4py3M5,!i';
+$db['default']['database'] = 'lebnhorg_demo';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

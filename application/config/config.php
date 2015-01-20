@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/hours/';
+$config['base_url']	= 'https://www.leblibrary.com/demo';
 
 /*
 |--------------------------------------------------------------------------
