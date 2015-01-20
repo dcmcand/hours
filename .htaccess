@@ -1,4 +1,4 @@
 
 RewriteEngine on
 RewriteCond $1 !^(index\.php|images|robots\.txt|assets)
-RewriteRule ^(.*)$ /hours/index.php/$1 [L]
+RewriteRule ^(.*)$ /demo/index.php/$1 [L]
