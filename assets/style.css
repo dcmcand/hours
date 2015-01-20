@@ -1,39 +1,11 @@
 html {
 height:100%;
 background-color: blue;
-padding: 5%;
+padding: 3%;
 }
 
 body {
 height: 100%;
 padding:10px;
 background-color: white;
-
-margin:10px;
 }
-.container{
-height: auto;
-background-color: white;
-}
-.left {
-float: left;
-height: 100%;
-width: auto;
-padding: 10px;
-margin: 10px;
-
-}
-
-.center{
-height: auto;
-width: auto;
-padding: 10px;
-margin: 10px;
-
-}
-
-td {
-text-align: center;
-padding: 5px;
-}
-

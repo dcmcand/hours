@@ -15,9 +15,16 @@
 	<nav class='navbar'>
 		<div class='container'>
 			<ul class="nav nav-tabs">
-				<li><a href='<?php echo base_url(); ?>'> Home </a> </li>
-				<li><a href='<?php echo base_url(); ?>hours/add_data/'> Add New Data</a></li>
-				<li><a href='<?php echo site_url(array('hours','older')) ?>'> View Older </a></li>
+				<li role='presentation'><a href='<?php echo base_url(); ?>'> Home </a> </li>
+				<li role='presentation'><a href='<?php echo base_url(); ?>hours/add_data/'> Add New Data</a></li>
+				<li class="dropdown">
+					<a class='dropdown-toggle' data-toggle='dropdown' role='button' href='#' aria-expanded="false"> View Older <span class='caret'></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href='#'>1</a></li>
+						<li><a href='#'>1</a></li>
+						<li><a href='#'>1</a></li>
+					</ul>
+				</li>
 			</ul>
 		</div> 
 	</nav>
