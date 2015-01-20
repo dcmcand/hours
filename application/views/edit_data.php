@@ -11,12 +11,13 @@
 <?php $url = array('hours', 'edit_data_success',$year); ?>
 	<body>
 		<h4>Edit Data</h4>
-		<Form method="Post" action="<?php echo site_url($url)?>">
+		<Form class='form-inline' method="Post" action="<?php echo site_url($url)?>">
 			<?php foreach ($shift as $s):
 				echo '<input type="hidden" name="idShift" value="' . $s["idShift"] . '" >';
 				endforeach;
 				?>
-			Employee:<select name="idEmployee" >
+				<div class='form-group'>
+			<label for='idEmployee'>Employee: </label><select id='idEmployee' class='form-control' name="idEmployee" >
 				<?php 
 					foreach ($name as $n):
 						foreach($shift as $s):
@@ -33,14 +34,23 @@
 				?>
 
 		</select>
-				Pay Period: <input class="pay_period" max="53" min="1" type="number" name="pay_period"  value=<?php echo $shift[0]['pay_period'] ?> required/>
-				Hours:<input class="hours" type="number" max="99" step=".25" name="hours" value=<?php echo $shift[0]['hours'] ?> required/>
-				Wages:<input class="wages" type="number" max="9999.99" step=".01" name="wages" value=<?php echo $shift[0]['wages'] ?> required/>
-				Type:<select class="type" name="type">
+		</div>
+		<div class='form-group'>
+				<label for='pay_period'>Pay Period: </label><input id='pay_period' class="pay_period form-control" max="53" min="1" type="number" name="pay_period"  value=<?php echo $shift[0]['pay_period'] ?> required/>
+				</div>
+				<div class='form-group'>
+				<label for='hours'>Hours: </label><input id='hours' class="hours form-control" type="number" max="99" step=".25" name="hours" value=<?php echo $shift[0]['hours'] ?> required/>
+				</div>
+				<div class='form-group'>
+				<label for='wages'>Wages: </label><input id='wages' class="wages form-control" type="number" max="9999.99" step=".01" name="wages" value=<?php echo $shift[0]['wages'] ?> required/>
+				</div>
+				<div class='form-group'>
+				<label for='type'>Type: </label><select id='type' class="type form-control" name="type">
 					<option value='pt' <?php if ($shift[0]['type']==='pt'){echo "selected";}; ?> >Part Time</option>
 					<option value="circ" <?php if ($shift[0]['type']==='circ'){echo "selected";}; ?>> Circulation Substitute</option>
 					<option value="ref" <?php if ($shift[0]['type']==='ref'){echo "selected";}; ?>>Reference Substitute</option>
 				</select>
+				</div>
 				<input type='hidden' name='type_of_search' value='<?php echo $type_of_search; ?>'/>
 				<input type='hidden' name='<?php 
 					switch($type_of_search){ 
@@ -67,7 +77,7 @@
 							break;
 					};
 				?>'/>
-			<input type='submit' value='Edit'/>
+			<input type='submit' class='btn btn-default' value='Edit'/>
 		</form>
 	
 		

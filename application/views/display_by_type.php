@@ -1,6 +1,6 @@
 
 	<div class="container">
-	<div class="left">
+	<div class="col-md-6">
 <?php
 
 echo "<h1>";
@@ -63,8 +63,8 @@ echo" hours per pay period worked this year: " . $totals['0']['avg_hours'];
 <button id="details">Details</button><br/>
 
 </div>
-<div id="details_table" class="center">
-<table border=1>
+<div id="details_table" class="col-md-6">
+<table class='table table-striped' border=1>
 	<tr>
 		<th>Employee</th>
 		<th>Hours</th>
@@ -100,7 +100,7 @@ $delete = array('hours','delete_data',$year);
 			<input type='hidden' name='idShift' value='".$w['idShift']."'/>
 			<input type='hidden' name='type_of_search' value='type'/>
 			<input type='hidden' name='type' value='".$w['type'] . "'/>
-			<input type='submit' value='Edit'/>
+			<input type='submit' class='btn btn-warning' value='Edit'/>
 			</form>
 			</td>";
 		echo "<td>
@@ -108,7 +108,7 @@ $delete = array('hours','delete_data',$year);
 			<input type='hidden' name='type_of_search' value='type'/>
 			<input type='hidden' name='type' value='".$w['type'] . "'/>
 			<input type='hidden' name='idShift' value='".$w['idShift']."'/>
-			<input type='button' class='delete' value='Delete'/>
+			<input type='button' class='delete btn btn-danger' value='Delete'/>
 			</form>
 			</td>";
 	endforeach;

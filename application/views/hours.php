@@ -2,7 +2,7 @@
 <div class='container'>
 	<div id="search" class='col-md-6'>
 	
-			<h1 class='well'>Search Database</h1>
+			<h1 >Search Database</h1><hr/>
 			<h3>Search By Employee</h3>
 <?php $url = array('hours', 'search_by_employee', $year); ?>
 			<form class='form-inline'method="post" action="<?php echo site_url($url)?>">
@@ -49,7 +49,7 @@
 				</div>
 				
 				<div id="summary" class="col-md-6">
-				<h1 class='well'>Summary</h1>
+				<h1 >Summary</h1><hr/>
 				<h2>Totals for <?php echo $year ?></h2>
 					Total wages paid to date: <?php echo "$" . $totals['0']['total_wages'];?> <br/>
 					Total hours worked to date: <?php echo $totals['0']['total_hours'];?> <br/>
@@ -78,11 +78,7 @@
 				
 				</div>	
 		</div>	
-	</body>
 	
-</html>
-
-<script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
 
 
 

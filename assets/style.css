@@ -1,11 +1,14 @@
+body {
+	padding: 2%;
+	border-radius: 10px;
+}	
+
 html {
-height:100%;
-background-color: blue;
-padding: 3%;
+	background-color: blue;
+	padding: 2%;
 }
 
-body {
-height: 100%;
-padding:10px;
-background-color: white;
+
+.head{
+	width: =100%;
 }

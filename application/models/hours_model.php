@@ -201,7 +201,7 @@ class Hours_model extends CI_Model {
 		$this->db->select('Year');
 		$this->db->group_by('Year');
 		$query = $this->db->get('pay');
-		//print_r $query->result_array();
+		#print_r $query->result_array();
 		return $query->result_array();
 	}
 }	

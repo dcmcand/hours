@@ -20,9 +20,16 @@ class Hours extends CI_Controller {
 		$data['totals']=$this->hours_model->totals($year);
 		$data['summary_by_type']=$this->hours_model->summary_by_type($year);
 		$data['year']=$year;
-		$this->load->view('header');
+		$this->header();
 		$this->load->view('hours', $data);
+		$this->load->view('footer');
 		
+	}
+	public function header(){
+		$this->load->model('hours_model');
+		$data['years']=$this->hours_model->get_years();
+		#print_r($data.['years']);
+		$this->load->view('header',$data);
 	}
 	
 	public function search_by_employee($year,$script='$("#details_table").hide();'){
@@ -32,8 +39,9 @@ class Hours extends CI_Controller {
 		$data['wages']=$this->hours_model->emp_wages($year);
 		$data['script']=$script;
 		$data['year']=$year;
-		$this->load->view('header');
-		$this->load->view('display_by_employee',$data);	
+		$this->header();
+		$this->load->view('display_by_employee',$data);
+		#$this->load->view('footer');	
 	
 	}
 	public function search_by_type($year,$script='$("#details_table").hide();'){
@@ -43,8 +51,9 @@ class Hours extends CI_Controller {
 		$data['wages']=$this->hours_model->wages_by_type($year);
 		$data['script']=$script;
 		$data['year']=$year;
-		$this->load->view('header');
+		$this->header();
 		$this->load->view('display_by_type',$data);	
+		$this->load->view('footer');
 	}
 	public function search_by_pay_period($year,$script='$("#details_table").hide();'){
 		//Search by pay period
@@ -54,15 +63,17 @@ class Hours extends CI_Controller {
 		$data['wages']=$this->hours_model->wages_by_pay_period($year);
 		$data['script']=$script;
 		$data['year']=$year;
-		$this->load->view('header');
-		$this->load->view('display_by_pay_period',$data);	
+		$this->header();
+		$this->load->view('display_by_pay_period',$data);
+		$this->load->view('footer');	
 	}
 	public function add_data(){
 		//Add new wage and hours data to the database
 		$this->load->model('hours_model');
 		$data['name']=$this->hours_model->emp_name();
-		$this->load->view('header');
+		$this->header();
 		$this->load->view('add_data',$data);
+		$this->load->view('footer');
 	}
 	
 	public function add_data_success(){
@@ -74,8 +85,9 @@ class Hours extends CI_Controller {
 			} else {
 				$data['message']="Something went wrong";
 			}	
-			$this->load->view('header');
+			$this->header();
 			$this->load->view('add_data_success', $data);
+			$this->load->view('footer');
 			
 		}
 
@@ -97,8 +109,9 @@ class Hours extends CI_Controller {
 		$shift=$this->hours_model->get_one_shift($data);
 		$data['shift']=$shift;
 		$data['year']=$year;
-		$this->load->view('header');
+		$this->header();
 		$this->load->view('edit_data',$data);
+		$this->load->view('footer');
 	}
 	public function edit_data_success($year){
 		$this->load->model('hours_model');
@@ -173,10 +186,9 @@ class Hours extends CI_Controller {
 	}
 	public function older()
 	{
-		$this->load->model('hours_model');
-		$data['years']=$this->hours_model->get_years();
-		$this->load->view('header');
+		
 		$this->load->view('older',$data);
+		$this->load->view('footer');
 	}
 }
 	

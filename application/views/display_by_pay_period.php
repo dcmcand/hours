@@ -1,10 +1,14 @@
 
 	<div class="container">
-	<div class="left">
+	
 <?php
 #print_r($wages);
-echo "<h1> Pay Period " . $wages['0']['pay_period'] . "</h1>";
-echo "<h2>Summary</h2>" ;
+echo "<div class='head'><h1> Pay Period " . $wages['0']['pay_period'] . "</h1></div><hr/>";
+?>
+<div>
+<div class='col-md-6'>
+<h2>Summary</h2>" ;
+<?php
 echo "Total Wages paid during this pay period: $" . $totals['0']['total_wages'] . "<br/>";
 echo "Total Hours worked during this pay period: " . $totals['0']['total_hours'] . "<br/>";
 echo "Average hours worked per employee during this pay period: " . $totals['0']['avg_hours'];
@@ -33,8 +37,8 @@ echo "Average hours worked per employee during this pay period: " . $totals['0']
 <br/>
 <button id="details">Details</button>
 </div>
-<div class="center" id="details_table">
-<table border=1>
+<div class="col-md-6" id="details_table">
+<table class='table table-striped' border=1>
 
 	<tr>
 		<th>Employee</th>
@@ -69,7 +73,7 @@ $delete = array('hours','delete_data',$year);
 			<input type='hidden' name='idShift' value='".$w['idShift']."'/>
 			<input type='hidden' name='pay_period' value='".$w['pay_period'] . "'/>
 			<input type='hidden' name='type_of_search' value='pay'/>
-			<input type='submit' value='Edit'/>
+			<input class='btn btn-warning' type='submit' value='Edit'/>
 			</form>
 			</td>";
 		echo "<td>
@@ -77,14 +81,14 @@ $delete = array('hours','delete_data',$year);
 			<input type='hidden' name='pay_period' value='".$w['pay_period'] . "'/>
 			<input type='hidden' name='type_of_search' value='pay'/>
 			<input type='hidden' name='idShift' value='".$w['idShift']."'/>
-			<input type='button' class='delete' value='Delete'/>
+			<input type='button' class='delete btn btn-danger' value='Delete'/>
 			</form>
 			</td>";
 	endforeach;
 ?>
 </table>
 
-
+</div>
 </div>
 </div>
 </body>

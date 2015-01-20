@@ -1,13 +1,13 @@
 
 
-<div class="center">
+<div class="col-md-6">
 <?php
 //print_r($test);
 //echo "<br/>";
 
 echo $message . "<br/>";
 $this->load->model('hours_model');
-	echo "<table>
+	echo "<table class='table table-striped'>
 		<tr>
 		<th>Name</th>
 		<th>Pay Period</th>
