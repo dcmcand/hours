@@ -7,7 +7,7 @@ echo "<div class='head'><h1> Pay Period " . $wages['0']['pay_period'] . "</h1></
 ?>
 <div>
 <div class='col-md-6'>
-<h2>Summary</h2>" ;
+<h2>Summary</h2>
 <?php
 echo "Total Wages paid during this pay period: $" . $totals['0']['total_wages'] . "<br/>";
 echo "Total Hours worked during this pay period: " . $totals['0']['total_hours'] . "<br/>";
